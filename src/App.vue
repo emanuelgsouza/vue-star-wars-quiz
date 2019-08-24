@@ -1,8 +1,17 @@
+<script>
+import AppVersion from './components/Version'
+
+export default {
+  name: 'App',
+  components: { AppVersion }
+}
+</script>
+
 <template>
-  <div id="app">
-    <router-view/>
+  <div id="app" class="min-h-screen flex justify-center items-center">
+    <div>
+      <router-view/>
+      <AppVersion />
+    </div>
   </div>
 </template>
-
-<style lang="scss">
-</style>
