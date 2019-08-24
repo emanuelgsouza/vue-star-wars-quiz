@@ -1,36 +1,43 @@
 # vue-star-wars-quiz
 
-An application to build Quizes using Star Wars API in GraphQL
+An application to use Star Wars API on GraphQL to build a quiz about the planets and characters relationships
 
-## Project setup
-```
-yarn install
-```
+Visit the website in <Comming soon>
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+## Prerequisites
 
-### Compiles and minifies for production
-```
-yarn run build
+* node
+* npm
+
+## Install
+
+```sh
+yarn or npm install
 ```
 
-### Run your tests
-```
-yarn run test
+## Usage
+
+Serve the application in [http://localhost:8080](http://localhost:8080)
+
+```sh
+yarn serve or npm run serve
 ```
 
-### Lints and fixes files
-```
-yarn run lint
+## Build
+
+Build application
+
+```sh
+yarn build or npm run build
 ```
 
-### Run your unit tests
-```
-yarn run test:unit
-```
+## Technologies
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* [Vue.js](https://vuejs.org) using [vue-cli](https://cli.vuejs.org)
+* [Tailwind.css](https://tailwindcss.com/)
+
+## Author
+
+Emanuel Gonçalves
+* Twitter [@emanuelgsouza](https://twitter.com/emanuelgsouza)
+* Github [@emanuelgsouza](https://github.com/emanuelgsouza)
