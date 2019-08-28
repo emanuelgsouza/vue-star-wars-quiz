@@ -1,15 +1,11 @@
 <script>
-import AppVersion from './components/Version'
-
 export default {
-  name: 'App',
-  components: { AppVersion }
+  name: 'App'
 }
 </script>
 
 <template>
-  <div id="app" class="min-h-screen">
+  <div id="app">
     <router-view/>
-    <AppVersion />
   </div>
 </template>

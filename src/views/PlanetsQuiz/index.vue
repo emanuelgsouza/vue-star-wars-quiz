@@ -18,10 +18,13 @@
         Check!
       </button>
     </div>
+
+    <AppVersion />
   </div>
 </template>
 
 <script>
+import AppVersion from '../../components/Version'
 import QuestionText from '../../components/QuestionText'
 import QuestionOptions from '../../components/QuestionOptions'
 import AppHeader from './header'
@@ -31,7 +34,8 @@ export default {
   components: {
     AppHeader,
     QuestionText,
-    QuestionOptions
+    QuestionOptions,
+    AppVersion
   },
   data: () => ({
     options: [

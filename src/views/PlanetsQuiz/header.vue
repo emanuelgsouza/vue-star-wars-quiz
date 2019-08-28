@@ -1,12 +1,12 @@
 <template>
   <header class="header">
     <div class="header__body">
-      <div class="header__logo">
+      <router-link class="header__logo" to="/">
         <span class="icon">
           <i class="fas fa-jedi"></i>
         </span>
         <span class="text">Planets Quiz</span>
-      </div>
+      </router-link>
 
       <div class="header__steps">
         <Steps

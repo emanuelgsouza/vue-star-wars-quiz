@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div class="page-container min-h-screen flex justify-center items-center">
     <div class="px-4">
       <div class="max-w-sm mx-auto">
         <Logo />
@@ -13,16 +13,19 @@
       <router-link to="/quiz" class="button">
         Start the Quiz!
       </router-link>
+
+      <AppVersion />
     </div>
   </div>
 </template>
 
 <script>
+import AppVersion from '../components/Version'
 import Logo from '../components/Logo'
 
 export default {
   name: 'HomePage',
-  components: { Logo }
+  components: { Logo, AppVersion }
 }
 </script>
 
