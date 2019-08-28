@@ -1,5 +1,5 @@
 <template>
-  <p class="text-center">What planet was {{ person }} born on?</p>
+  <p class="text-center text-2xl">What planet was {{ person }} born on?</p>
 </template>
 
 <script>

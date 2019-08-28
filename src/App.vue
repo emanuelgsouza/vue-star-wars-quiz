@@ -9,7 +9,7 @@ export default {
 
 <template>
   <div id="app" class="min-h-screen flex justify-center items-center">
-    <div>
+    <div class="w-full h-full">
       <router-view/>
       <AppVersion />
     </div>

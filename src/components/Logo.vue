@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template functional>
-  <figure class="logo">
+  <figure>
     <img
       src="/star-wars-logo.jpg"
       alt="Star Wars Logo"

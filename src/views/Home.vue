@@ -1,7 +1,9 @@
 <template>
   <div class="page-container">
     <div class="px-4">
-      <Logo />
+      <div class="max-w-sm mx-auto">
+        <Logo />
+      </div>
       <h1 class="text-3xl md:text-6xl text-secondary"> Planets Quiz </h1>
 
       <p class="max-w-lg mx-auto text-lg py-6">
