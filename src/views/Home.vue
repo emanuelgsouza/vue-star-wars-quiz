@@ -32,25 +32,4 @@ export default {
     mx-auto
     text-center;
 }
-
-.button {
-  @apply
-    inline-block
-    text-lg
-    text-secondary
-    border
-    border-secondary
-    font-bold
-    py-4
-    px-8
-    rounded;
-  transition: all ease 0.4s 0s;
-}
-
-.button:hover {
-  @apply
-    bg-secondary
-    text-primary
-    tracking-widest;
-}
 </style>

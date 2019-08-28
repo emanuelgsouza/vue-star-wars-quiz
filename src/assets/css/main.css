@@ -5,3 +5,24 @@
 .page-container {
     width: 100%;
 }
+
+.button {
+    @apply
+        inline-block
+        text-lg
+        text-secondary
+        border
+        border-secondary
+        font-bold
+        py-4
+        px-8
+        rounded;
+    transition: all ease 0.4s 0s;
+}
+
+.button:hover {
+    @apply
+        bg-secondary
+        text-primary
+        tracking-widest;
+}
