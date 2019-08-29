@@ -3,16 +3,25 @@ import pkg from '../../package.json'
 
 export default {
   name: 'AppVersion',
-  data: () => ({
-    version: pkg.version
-  })
+  version: pkg.version
 }
 </script>
 
 <template>
-  <p class="text-sm text-center mt-6 text-secondary">
-    Made With
-      <span class="icon"> <i class="fab fa-vuejs"></i> </span>
-      by <a href="https://emanuelgsouza.dev" target="blanc" title="Visit the Emanuel Gonçalves website"> @emanuelgsouza </a>
-  </p>
+  <div class="version">
+    <p>
+      Made With
+        <span> <i class="fab fa-vuejs"></i> </span>
+        by <a href="https://emanuelgsouza.dev" target="blanc" title="Visit the Emanuel Gonçalves website"> @emanuelgsouza </a>
+    </p>
+    <p>
+      <a href="https://github.com/emanuelgsouza/vue-star-wars-quiz"><i class="fab fa-github"></i> {{ $options.version }}</a>
+    </p>
+  </div>
 </template>
+
+<style>
+.version {
+  @apply mt-6 text-base text-center text-secondary;
+}
+</style>
