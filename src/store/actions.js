@@ -1,7 +1,7 @@
 import { get } from 'lodash-es'
 import * as TYPES from './mutation-types'
 import initialState from './state'
-import { loadPersonsQuery, loadPlanetsQuery } from '../support/services'
+import { loadPeopleQuery, loadPlanetsQuery } from '../support/services'
 import { factoryQuestion } from '../support/utils'
 
 export const loadPersons = async ({ commit }) => {
@@ -9,7 +9,7 @@ export const loadPersons = async ({ commit }) => {
   commit(TYPES.SET_PERSON_ERROR, false)
 
   try {
-    const personsData = await loadPersonsQuery()
+    const personsData = await loadPeopleQuery()
     commit(TYPES.SET_PERSONS, personsData)
   } catch (err) {
     commit(TYPES.SET_PERSON_ERROR, true)
