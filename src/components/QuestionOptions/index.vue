@@ -1,8 +1,8 @@
 <template>
   <div class="question-options">
     <Item
-      v-for="(option, key) in options"
-      :key="key"
+      v-for="option in options"
+      :key="option.value"
       v-bind="{ option, selected: value }"
       @selected="onSelected"
     />
