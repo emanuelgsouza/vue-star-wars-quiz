@@ -43,7 +43,7 @@ export default {
   height: 100%;
   overflow: auto;
   background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.8);
 }
 
 .modal.is-active {
@@ -56,7 +56,7 @@ export default {
   max-width: 400px;
   animation-name: animationModal;
   animation-duration: 0.5s;
-  @apply p-8 border mx-auto mt-40 border-secondary rounded-sm;
+  @apply bg-primary p-8 border text-center mx-auto mt-40 border-secondary rounded-sm;
 }
 
 .modal__close {

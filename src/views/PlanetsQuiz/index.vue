@@ -20,9 +20,14 @@
         :disabled="!hasSelected"
         @click="moveToNext"
       >
-        Check!
+        {{ buttonText }}
       </button>
     </div>
+
+    <ScoreModal
+      ref="modal"
+      @start="onStart"
+    />
 
     <AppVersion />
   </div>
@@ -35,6 +40,7 @@ import AppVersion from '../../components/Version'
 import QuestionText from '../../components/QuestionText'
 import QuestionOptions from '../../components/QuestionOptions'
 import AppHeader from './header'
+import ScoreModal from '../../components/Score/adapters/modal'
 
 export default {
   name: 'PlanetsQuiz',
@@ -42,7 +48,8 @@ export default {
     AppHeader,
     QuestionText,
     QuestionOptions,
-    AppVersion
+    AppVersion,
+    ScoreModal
   },
   computed: {
     ...mapState(['currentQuestion', 'steps', 'maxStep']),
@@ -62,7 +69,10 @@ export default {
       return !isEmpty(this.selected)
     },
     isLastQuestion () {
-      return size(this.steps) === this.maxStep
+      return size(this.steps) + 1 === this.maxStep
+    },
+    buttonText () {
+      return this.isLastQuestion ? 'Finish' : 'Check!'
     }
   },
   methods: {
@@ -78,11 +88,14 @@ export default {
     },
     moveToNext () {
       if (this.isLastQuestion) {
-        // show score
+        this.$refs.modal.open()
         return
       }
 
       this.moveToNextQuestion()
+    },
+    onStart () {
+      this.initializeQuiz()
     }
   },
   mounted () {

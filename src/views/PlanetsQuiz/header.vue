@@ -38,7 +38,7 @@ export default {
   computed: {
     ...mapState(['steps', 'maxStep']),
    actualStep () {
-     return this.steps.length
+     return this.steps.length + 1
    }
   }
 }

@@ -39,7 +39,7 @@ import AppVersion from '../components/Version'
 import Logo from '../components/Logo'
 import Alerts from '../components/Alert'
 import Loading from '../components/Loading'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'HomePage',
@@ -49,6 +49,12 @@ export default {
     showButton () {
       return !this.loadingData && !this.hasErrors
     }
+  },
+  methods: {
+    ...mapActions(['resetQuiz'])
+  },
+  mounted () {
+    this.resetQuiz()
   }
 }
 </script>

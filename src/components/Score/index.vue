@@ -8,25 +8,35 @@
 
     <Steps
       class="text-2xl"
-      :steps="10"
-      :actualStep="5"
+      :steps="maxStep"
+      :actualStep="hasSuccessSize"
     />
 
-    <Result :hits="5" />
+    <Result :hits="hasSuccessSize" />
 
-    <router-link to="/quiz" class="button">
+    <button class="button" @click="onClick">
       Start the Again?!
-    </router-link>
+    </button>
   </div>
 </template>
 
 <script>
 import Steps from '../Steps'
 import Result from './Result'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'ScorePage',
-  components: { Steps, Result }
+  components: { Steps, Result },
+  computed: {
+    ...mapState(['maxStep']),
+    ...mapGetters(['hasSuccessSize'])
+  },
+  methods: {
+    onClick () {
+      this.$emit('start')
+    }
+  }
 }
 </script>
 

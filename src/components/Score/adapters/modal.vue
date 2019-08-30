@@ -1,6 +1,6 @@
 <template>
-  <Modal ref="modal">
-    <Score />
+  <Modal ref="modal" v-on="$listeners">
+    <Score @start="onStart" />
   </Modal>
 </template>
 
@@ -17,6 +17,13 @@ export default {
     },
     close () {
       this.$refs.modal.close()
+    },
+    onStart () {
+      this.$emit('start')
+
+      this.$nextTick(() => {
+        this.close()
+      })
     }
   }
 }

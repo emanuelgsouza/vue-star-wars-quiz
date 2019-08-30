@@ -70,5 +70,6 @@ export const createQuestion = ({ state, getters, commit }) => {
 }
 
 export const initializeQuiz = ({ dispatch }) => {
-  return dispatch('createQuestion')
+  return dispatch('resetQuiz')
+    .then(() => dispatch('createQuestion'))
 }
