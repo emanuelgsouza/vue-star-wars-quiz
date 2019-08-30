@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "generate": "node scripts/generate-data.js"
   },
   "dependencies": {
     "apollo-boost": "^0.4.4",
@@ -28,12 +29,15 @@
     "@vue/cli-service": "^3.11.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
+    "apollo-fetch": "^0.7.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.9.0",
     "eslint": "^6.2.1",
     "eslint-plugin-jest": "^22.15.2",
     "eslint-plugin-vue": "^5.0.0",
+    "fs-extra": "^8.1.0",
+    "lodash": "^4.17.15",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.3.1",
     "tailwindcss": "^1.1.2",
