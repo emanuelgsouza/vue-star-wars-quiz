@@ -9,12 +9,13 @@
     <div class="question-options-container">
       <QuestionOptions
         :options="options"
-        v-model="selected"
+        :value="selected"
+        @input="onInput"
       />
     </div>
 
     <div class="question-check">
-      <button class="button">
+      <button class="button" :disabled="!hasSelected">
         Check!
       </button>
     </div>
@@ -24,11 +25,12 @@
 </template>
 
 <script>
+import { mapActions, mapState, mapMutations } from 'vuex'
+import { isEmpty } from 'lodash'
 import AppVersion from '../../components/Version'
 import QuestionText from '../../components/QuestionText'
 import QuestionOptions from '../../components/QuestionOptions'
 import AppHeader from './header'
-import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'PlanetsQuiz',
@@ -38,9 +40,6 @@ export default {
     QuestionOptions,
     AppVersion
   },
-  data: () => ({
-    selected: ''
-  }),
   computed: {
     ...mapState(['currentQuestion']),
     options () {
@@ -51,10 +50,25 @@ export default {
     },
     person () {
       return this.currentQuestion.person
+    },
+    selected () {
+      return this.currentQuestion.selected
+    },
+    hasSelected () {
+      return !isEmpty(this.selected)
     }
   },
   methods: {
-    ...mapActions(['initializeQuiz'])
+    ...mapMutations({
+      'setCurrentQuestion': 'SET_CURRENT_QUESTION'
+    }),
+    ...mapActions(['initializeQuiz']),
+    onInput (selected) {
+      this.setCurrentQuestion({
+        ...this.currentQuestion,
+        selected
+      })
+    }
   },
   mounted () {
     this.initializeQuiz()

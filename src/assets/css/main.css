@@ -20,9 +20,13 @@
     transition: all ease 0.4s 0s;
 }
 
-.button:hover {
+.button:not(:disabled):hover {
     @apply
         bg-secondary
         text-primary
         tracking-widest;
+}
+
+.button:disabled {
+    @apply opacity-50 cursor-not-allowed;
 }
