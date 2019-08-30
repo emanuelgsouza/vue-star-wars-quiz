@@ -5,7 +5,9 @@ module.exports = {
     extend: {
       colors: {
         primary: '#000', // black
-        secondary: '#FEE73A' // yellow
+        secondary: '#FEE73A', // yellow
+        negative: '#E53E3E', // red
+        warning: '#F6E05E' // orange
       },
       fontFamily: {
         sans: [
