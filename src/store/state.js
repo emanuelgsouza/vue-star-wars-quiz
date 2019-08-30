@@ -8,5 +8,7 @@ export default {
     planets: []
   },
   loadingPersons: false,
-  loadingPlanets: false
+  loadingPlanets: false,
+  hasPersonError: false,
+  hasPlanetError: false
 }

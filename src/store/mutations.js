@@ -35,5 +35,23 @@ export default {
    */
   [TYPES.SET_LOADING_PERSON] (state, loading) {
     state.loadingPersons = loading || false
+  },
+
+  /**
+   * @method setPersonError
+   * @param {Object}  state   Vuex state
+   * @param {Boolean} error
+   */
+  [TYPES.SET_PERSON_ERROR] (state, error) {
+    state.hasPersonError = error || false
+  },
+
+  /**
+   * @method setPlanetError
+   * @param {Object}  state   Vuex state
+   * @param {Boolean} error
+   */
+  [TYPES.SET_PLANET_ERROR] (state, error) {
+    state.hasPlanetError = error || false
   }
 }
