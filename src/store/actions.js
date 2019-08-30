@@ -37,6 +37,7 @@ export const loadPlanets = async ({ commit }) => {
 export const resetQuiz = ({ commit }) => {
   commit(TYPES.SET_CURRENT_QUESTION, initialState.currentQuestion)
   commit(TYPES.SET_STEPS, [])
+  commit(TYPES.SET_TIMER, 0)
 }
 
 export const createQuestion = ({ state, getters, commit }) => {
@@ -45,6 +46,7 @@ export const createQuestion = ({ state, getters, commit }) => {
   const personsData = get(state, 'personsData.people', [])
   const data = factoryQuestion(steps.length, personsData, planetsAvailable)
 
+  commit(TYPES.SET_TIMER, 0)
   commit(TYPES.SET_CURRENT_QUESTION, data)
   commit(TYPES.SET_STEPS, [ ...steps, data ])
 

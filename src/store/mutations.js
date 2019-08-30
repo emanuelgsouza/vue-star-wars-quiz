@@ -71,5 +71,14 @@ export default {
    */
   [TYPES.SET_STEPS] (state, steps) {
     state.steps = steps || []
+  },
+
+  /**
+   * @method setTimer
+   * @param {Object}  state   Vuex state
+   * @param {Object} current
+   */
+  [TYPES.SET_TIMER] (state, timer) {
+    state.timer = timer
   }
 }

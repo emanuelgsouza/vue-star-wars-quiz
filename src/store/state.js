@@ -13,5 +13,6 @@ export default {
   hasPlanetError: false,
   currentQuestion: {},
   steps: [],
-  maxStep: 10
+  maxStep: 10,
+  timer: 0
 }

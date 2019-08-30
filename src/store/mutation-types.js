@@ -8,3 +8,4 @@ export const SET_PLANET_ERROR = 'SET_PLANET_ERROR'
 
 export const SET_CURRENT_QUESTION = 'SET_CURRENT_QUESTION'
 export const SET_STEPS = 'SET_STEPS'
+export const SET_TIMER = 'SET_TIMER'

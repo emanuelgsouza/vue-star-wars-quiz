@@ -19,7 +19,7 @@ const factoryQuestion = (step, personsData, planetsAvailable) => {
     step,
     person: person.name,
     homeworld,
-    time: 0, // (milissegundos)
+    timer: 0, // (milissegundos)
     planets: planets.map(planet => ({ value: planet, label: planet })),
     selected: null,
     has_success: false
