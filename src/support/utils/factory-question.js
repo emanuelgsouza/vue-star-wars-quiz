@@ -10,8 +10,8 @@ import getPlanetsToQuiz from './get-planets-to-quiz'
  * @return {Object}
  */
 const factoryQuestion = (step, personsData, planetsAvailable) => {
-  const randomUser = getRandomNumber(personsData.length)
-  const person = personsData[randomUser]
+  const randomPerson = getRandomNumber(personsData.length)
+  const person = personsData[randomPerson]
   const homeworld = get(person, 'homeworld.name', '')
   const planets = getPlanetsToQuiz(planetsAvailable, homeworld)
 
