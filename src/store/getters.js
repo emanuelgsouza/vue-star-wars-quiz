@@ -20,3 +20,10 @@ export const usersAvailable = ({ personsData }, { usedCharacters }) => {
 export const planetsAvailable = ({ planetsData }) => {
   return map(planetsData.planets || [], 'name')
 }
+
+export const hasSuccessSize = ({ steps }) => {
+  return steps.reduce((acc, step) => {
+    acc += step.has_success ? 1 : 0
+    return acc
+  }, 0)
+}

@@ -40,6 +40,23 @@ export const resetQuiz = ({ commit }) => {
   commit(TYPES.SET_TIMER, 0)
 }
 
+export const moveToNextQuestion = ({ dispatch, state, commit }) => {
+  const { currentQuestion, timer, steps } = state
+  const { homeworld, selected } = currentQuestion
+  const isMatch = homeworld === selected
+
+  const data = {
+    ...currentQuestion,
+    has_success: isMatch,
+    timer
+  }
+
+  commit(TYPES.SET_CURRENT_QUESTION, data)
+  commit(TYPES.SET_STEPS, [ ...steps, data ])
+
+  dispatch('createQuestion')
+}
+
 export const createQuestion = ({ state, getters, commit }) => {
   const { planetsAvailable } = getters
   const { steps } = state
@@ -48,7 +65,6 @@ export const createQuestion = ({ state, getters, commit }) => {
 
   commit(TYPES.SET_TIMER, 0)
   commit(TYPES.SET_CURRENT_QUESTION, data)
-  commit(TYPES.SET_STEPS, [ ...steps, data ])
 
   return Promise.resolve(data)
 }

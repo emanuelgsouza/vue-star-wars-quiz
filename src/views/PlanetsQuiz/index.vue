@@ -15,7 +15,11 @@
     </div>
 
     <div class="question-check">
-      <button class="button" :disabled="!hasSelected">
+      <button
+        class="button"
+        :disabled="!hasSelected"
+        @click="moveToNext"
+      >
         Check!
       </button>
     </div>
@@ -26,7 +30,7 @@
 
 <script>
 import { mapActions, mapState, mapMutations } from 'vuex'
-import { isEmpty } from 'lodash'
+import { isEmpty, size } from 'lodash'
 import AppVersion from '../../components/Version'
 import QuestionText from '../../components/QuestionText'
 import QuestionOptions from '../../components/QuestionOptions'
@@ -41,7 +45,7 @@ export default {
     AppVersion
   },
   computed: {
-    ...mapState(['currentQuestion']),
+    ...mapState(['currentQuestion', 'steps', 'maxStep']),
     options () {
       return this.currentQuestion.planets || []
     },
@@ -56,18 +60,29 @@ export default {
     },
     hasSelected () {
       return !isEmpty(this.selected)
+    },
+    isLastQuestion () {
+      return size(this.steps) === this.maxStep
     }
   },
   methods: {
     ...mapMutations({
       'setCurrentQuestion': 'SET_CURRENT_QUESTION'
     }),
-    ...mapActions(['initializeQuiz']),
+    ...mapActions(['initializeQuiz', 'createQuestion', 'moveToNextQuestion']),
     onInput (selected) {
       this.setCurrentQuestion({
         ...this.currentQuestion,
         selected
       })
+    },
+    moveToNext () {
+      if (this.isLastQuestion) {
+        // show score
+        return
+      }
+
+      this.moveToNextQuestion()
     }
   },
   mounted () {
