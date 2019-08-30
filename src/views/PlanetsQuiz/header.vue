@@ -37,9 +37,9 @@ export default {
   },
   computed: {
     ...mapState(['steps', 'maxStep']),
-   actualStep () {
-     return this.steps.length + 1
-   }
+    actualStep () {
+      return this.steps.length + 1
+    }
   }
 }
 </script>

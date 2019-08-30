@@ -27,9 +27,7 @@ export default {
         return 'Almost there 😀'
       }
 
-      if (this.hits <= 10) {
-        return 'Glorious 😍'
-      }
+      return 'Glorious 😍'
     }
   }
 }
