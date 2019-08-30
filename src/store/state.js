@@ -10,5 +10,8 @@ export default {
   loadingPersons: false,
   loadingPlanets: false,
   hasPersonError: false,
-  hasPlanetError: false
+  hasPlanetError: false,
+  currentQuestion: {},
+  steps: [],
+  maxStep: 10
 }

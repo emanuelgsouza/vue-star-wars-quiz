@@ -53,5 +53,23 @@ export default {
    */
   [TYPES.SET_PLANET_ERROR] (state, error) {
     state.hasPlanetError = error || false
+  },
+
+  /**
+   * @method setCurrentQuestion
+   * @param {Object}  state   Vuex state
+   * @param {Object} current
+   */
+  [TYPES.SET_CURRENT_QUESTION] (state, current) {
+    state.currentQuestion = current || {}
+  },
+
+  /**
+   * @method setSteps
+   * @param {Object}  state   Vuex state
+   * @param {Object} current
+   */
+  [TYPES.SET_STEPS] (state, steps) {
+    state.steps = steps || []
   }
 }

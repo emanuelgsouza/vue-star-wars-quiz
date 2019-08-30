@@ -1,5 +1,8 @@
+import { get } from 'lodash'
 import * as TYPES from './mutation-types'
+import initialState from './state'
 import { loadPersonsQuery, loadPlanetsQuery } from '../support/services'
+import { factoryQuestion } from '../support/utils'
 
 export const loadPersons = async ({ commit }) => {
   commit(TYPES.SET_LOADING_PERSON, true)
@@ -29,4 +32,25 @@ export const loadPlanets = async ({ commit }) => {
   } finally {
     commit(TYPES.SET_LOADING_PLANET, false)
   }
+}
+
+export const resetQuiz = ({ commit }) => {
+  commit(TYPES.SET_CURRENT_QUESTION, initialState.currentQuestion)
+  commit(TYPES.SET_STEPS, [])
+}
+
+export const createQuestion = ({ state, getters, commit }) => {
+  const { planetsAvailable } = getters
+  const { steps } = state
+  const personsData = get(state, 'personsData.people', [])
+  const data = factoryQuestion(steps.length, personsData, planetsAvailable)
+
+  commit(TYPES.SET_CURRENT_QUESTION, data)
+  commit(TYPES.SET_STEPS, [ ...steps, data ])
+
+  return Promise.resolve(data)
+}
+
+export const initializeQuiz = ({ dispatch }) => {
+  return dispatch('createQuestion')
 }
