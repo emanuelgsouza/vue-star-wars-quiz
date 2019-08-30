@@ -3,7 +3,7 @@
     <AppHeader />
 
     <div class="question-text">
-      <QuestionText person="Luke Skywalker" />
+      <QuestionText v-bind="{ person }" />
     </div>
 
     <div class="question-options-container">
@@ -28,6 +28,7 @@ import AppVersion from '../../components/Version'
 import QuestionText from '../../components/QuestionText'
 import QuestionOptions from '../../components/QuestionOptions'
 import AppHeader from './header'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'PlanetsQuiz',
@@ -38,26 +39,26 @@ export default {
     AppVersion
   },
   data: () => ({
-    options: [
-      {
-        label: 'Tatooine',
-        value: 'Tatooine'
-      },
-      {
-        label: 'Rio de Janeiro',
-        value: 'Rio de Janeiro'
-      },
-      {
-        label: 'Jacoo',
-        value: 'Jacoo'
-      },
-      {
-        label: 'São Paulo',
-        value: 'São Paulo'
-      }
-    ],
     selected: ''
-  })
+  }),
+  computed: {
+    ...mapState(['currentQuestion']),
+    options () {
+      return this.currentQuestion.planets || []
+    },
+    correctValue () {
+      return this.currentQuestion.homeworld
+    },
+    person () {
+      return this.currentQuestion.person
+    }
+  },
+  methods: {
+    ...mapActions(['initializeQuiz'])
+  },
+  mounted () {
+    this.initializeQuiz()
+  }
 }
 </script>
 

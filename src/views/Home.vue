@@ -57,6 +57,7 @@ export default {
 .page-container {
   @apply
     mx-auto
-    text-center;
+    text-center
+  ;
 }
 </style>

@@ -10,8 +10,10 @@
 
       <div class="header__steps">
         <Steps
-          :steps="10"
-          :actualStep="5"
+          v-bind="{
+            steps: maxStep,
+            actualStep
+          }"
         />
       </div>
 
@@ -25,12 +27,19 @@
 <script>
 import Timer from '../../components/Timer'
 import Steps from '../../components/Steps'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Header',
   components: {
     Timer,
     Steps
+  },
+  computed: {
+    ...mapState(['steps', 'maxStep']),
+   actualStep () {
+     return this.steps.length
+   }
   }
 }
 </script>
