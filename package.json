@@ -10,14 +10,11 @@
     "generate": "node scripts/generate-data.js"
   },
   "dependencies": {
-    "apollo-boost": "^0.4.4",
     "core-js": "^3.2.1",
-    "graphql": "^14.5.4",
     "lodash-es": "^4.17.15",
     "register-service-worker": "^1.6.2",
     "visibilityjs": "^2.0.2",
     "vue": "^2.6.10",
-    "vue-apollo": "^3.0.0-rc.2",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },
