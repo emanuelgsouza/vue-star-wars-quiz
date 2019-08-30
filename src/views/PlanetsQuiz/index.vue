@@ -35,7 +35,7 @@
 
 <script>
 import { mapActions, mapState, mapMutations } from 'vuex'
-import { isEmpty, size } from 'lodash'
+import { isEmpty, size } from 'lodash-es'
 import AppVersion from '../../components/Version'
 import QuestionText from '../../components/QuestionText'
 import QuestionOptions from '../../components/QuestionOptions'

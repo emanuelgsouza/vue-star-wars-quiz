@@ -1,6 +1,6 @@
 import { graphqlClient } from '@/support/apollo'
 import gql from 'graphql-tag'
-import { get } from 'lodash'
+import { get } from 'lodash-es'
 
 export const loadPersonsQuery = () => {
   return graphqlClient.query({

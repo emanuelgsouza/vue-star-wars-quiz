@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import { get } from 'lodash-es'
 import getRandomNumber from './get-random-number'
 import getPlanetsToQuiz from './get-planets-to-quiz'
 

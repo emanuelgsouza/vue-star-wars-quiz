@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import { get } from 'lodash-es'
 import * as TYPES from './mutation-types'
 import initialState from './state'
 import { loadPersonsQuery, loadPlanetsQuery } from '../support/services'
