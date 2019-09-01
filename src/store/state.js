@@ -14,5 +14,6 @@ export default {
   currentQuestion: {},
   steps: [],
   maxStep: 10,
+  isRunning: false,
   timer: 0
 }

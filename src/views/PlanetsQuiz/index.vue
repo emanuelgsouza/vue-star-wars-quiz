@@ -79,7 +79,12 @@ export default {
     ...mapMutations({
       'setCurrentQuestion': 'SET_CURRENT_QUESTION'
     }),
-    ...mapActions(['initializeQuiz', 'createQuestion', 'moveToNextQuestion']),
+    ...mapActions([
+      'stopQuiz',
+      'initializeQuiz',
+      'createQuestion',
+      'moveToNextQuestion'
+    ]),
     onInput (selected) {
       this.setCurrentQuestion({
         ...this.currentQuestion,
@@ -88,8 +93,10 @@ export default {
     },
     moveToNext () {
       if (this.isLastQuestion) {
-        this.$refs.modal.open()
-        return
+        return this.stopQuiz()
+          .then(() => {
+            this.$refs.modal.open()
+          })
       }
 
       this.moveToNextQuestion()

@@ -76,9 +76,18 @@ export default {
   /**
    * @method setTimer
    * @param {Object}  state   Vuex state
-   * @param {Object} current
+   * @param {Number} current
    */
   [TYPES.SET_TIMER] (state, timer) {
     state.timer = timer
+  },
+
+  /**
+   * @method setRunning
+   * @param {Object}  state   Vuex state
+   * @param {Boolean}  isRunnig
+   */
+  [TYPES.SET_RUNNING] (state, isRunning) {
+    state.isRunning = isRunning
   }
 }

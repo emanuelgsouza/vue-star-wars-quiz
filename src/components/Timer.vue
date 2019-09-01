@@ -23,7 +23,19 @@ export default {
     $interval: null
   }),
   computed: {
-    ...mapState(['timer'])
+    ...mapState(['timer', 'isRunning'])
+  },
+  watch: {
+    isRunning: {
+      immediate: true,
+      handler (val) {
+        if (!val) {
+          return this.stopTimer()
+        }
+
+        return this.startTimer()
+      }
+    }
   },
   methods: {
     ...mapMutations({
@@ -40,9 +52,6 @@ export default {
   },
   beforeDestroy () {
     this.stopTimer()
-  },
-  mounted () {
-    this.startTimer()
   }
 }
 </script>

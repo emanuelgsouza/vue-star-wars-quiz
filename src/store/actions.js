@@ -38,6 +38,7 @@ export const resetQuiz = ({ commit }) => {
   commit(TYPES.SET_CURRENT_QUESTION, initialState.currentQuestion)
   commit(TYPES.SET_STEPS, [])
   commit(TYPES.SET_TIMER, 0)
+  commit(TYPES.SET_RUNNING, true)
 }
 
 export const moveToNextQuestion = ({ dispatch, state, commit }) => {
@@ -69,7 +70,14 @@ export const createQuestion = ({ state, getters, commit }) => {
   return Promise.resolve(data)
 }
 
-export const initializeQuiz = ({ dispatch }) => {
+export const initializeQuiz = ({ dispatch, commit }) => {
+  commit(TYPES.SET_RUNNING, true)
   return dispatch('resetQuiz')
     .then(() => dispatch('createQuestion'))
+}
+
+export const stopQuiz = ({ commit }) => {
+  commit(TYPES.SET_RUNNING, false)
+
+  return Promise.resolve(true)
 }
