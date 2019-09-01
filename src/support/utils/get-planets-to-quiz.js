@@ -1,4 +1,5 @@
 import getRandomNumber from './get-random-number'
+import { shuffle } from 'lodash-es'
 
 /**
  * @method getPlanetsQuiz
@@ -7,18 +8,20 @@ import getRandomNumber from './get-random-number'
  * @return {Array<String>}                  [ currentWorld, ... ]
  */
 const getPlanetsQuiz = (planetsAvailable, currentWorld) => {
-  const planets = planetsAvailable.filter(planet => planet !== currentWorld)
+  let planets = planetsAvailable.filter(planet => planet !== currentWorld)
   const data = []
 
   for (let x = 0; x < 4; x++) {
     const random = getRandomNumber(planets.length)
-    data.push(planets[random] || '')
+    const planetSelected = planets[random] || ''
+    data.push(planetSelected)
+    planets = planetsAvailable.filter(planet => planet !== planetSelected)
   }
 
-  return [
+  return shuffle([
     currentWorld,
     ...data
-  ]
+  ])
 }
 
 export default getPlanetsQuiz
