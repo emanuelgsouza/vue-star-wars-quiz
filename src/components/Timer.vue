@@ -4,7 +4,7 @@
       <i class="far fa-clock"></i>
     </span>
     <span class="text">
-      {{ timer }}
+      {{ timer | formatTimer }}
     </span>
   </div>
 </template>
@@ -12,9 +12,13 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 import Visibility from 'visibilityjs'
+import { formatTimer } from '@/support/utils'
 
 export default {
   name: 'Timer',
+  filters: {
+    formatTimer
+  },
   data: () => ({
     $interval: null
   }),
