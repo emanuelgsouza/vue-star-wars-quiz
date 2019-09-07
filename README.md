@@ -36,6 +36,13 @@ yarn build or npm run build
 * [Vue.js](https://vuejs.org) using [vue-cli](https://cli.vuejs.org)
 * [Tailwind.css](https://tailwindcss.com/)
 
+# TODO
+
+Some ideias to development
+
+* When the finished Quiz, show each question and corresponding answer.
+* Persist previous quizzes by using [localStorage](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/Window.localStorage)
+
 ## Author
 
 Emanuel Gonçalves
