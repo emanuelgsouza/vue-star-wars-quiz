@@ -77,7 +77,7 @@ export default {
   },
   methods: {
     ...mapMutations({
-      'setCurrentQuestion': 'SET_CURRENT_QUESTION'
+      setCurrentQuestion: 'SET_CURRENT_QUESTION'
     }),
     ...mapActions([
       'stopQuiz',

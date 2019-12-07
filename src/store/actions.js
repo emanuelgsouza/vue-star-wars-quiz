@@ -53,7 +53,7 @@ export const moveToNextQuestion = ({ dispatch, state, commit }) => {
   }
 
   commit(TYPES.SET_CURRENT_QUESTION, data)
-  commit(TYPES.SET_STEPS, [ ...steps, data ])
+  commit(TYPES.SET_STEPS, [...steps, data])
 
   dispatch('createQuestion')
 }

@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     ...mapMutations({
-      'setTimer': 'SET_TIMER'
+      setTimer: 'SET_TIMER'
     }),
     startTimer () {
       this.$interval = Visibility.every(1000, () => {

@@ -12,4 +12,4 @@ const initializeApp = async ({ dispatch }) => {
   }
 }
 
-export default [ initializeApp ]
+export default [initializeApp]

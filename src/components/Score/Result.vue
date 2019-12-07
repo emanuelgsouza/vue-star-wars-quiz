@@ -16,7 +16,7 @@ export default {
   computed: {
     message () {
       if (this.hits === 0) {
-        return `You don't know nothing 😋`
+        return 'You don\'t know nothing 😋'
       }
 
       if (this.hits <= 5) {
