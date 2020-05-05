@@ -4,25 +4,51 @@ import Home from './views/Home.vue'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HomeRoute',
-      component: Home
-    },
-    {
-      path: '/quiz',
-      name: 'PlanetsQuizRoute',
-      // route level code-splitting
-      // this generates a separate chunk (planetsQuiz.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "planetsQuiz" */ './views/PlanetsQuiz/index')
-    },
-    {
-      path: '/finish',
-      name: 'FinishRoute',
-      component: () => import(/* webpackChunkName: "finishQuiz" */ './views/Finish')
+const routes = [
+  {
+    path: '/',
+    name: 'HomeRoute',
+    component: Home
+  },
+  {
+    path: '/quiz',
+    name: 'PlanetsQuizRoute',
+    component: () => import(/* webpackChunkName: "planetsQuiz" */ './views/PlanetsQuiz/index')
+  },
+  {
+    path: '/finish',
+    name: 'FinishRoute',
+    component: () => import(/* webpackChunkName: "finishQuiz" */ './views/Finish'),
+    meta: {
+      requireFinishQuiz: true
     }
-  ]
+  }
+]
+
+const beforeEachConfig = (store, to, next) => {
+  const toMeta = to.meta || {}
+  const requireFinishQuiz = toMeta.requireFinishQuiz || false
+  const isFinishedQuiz = store.getters.isFinishedQuiz || false
+
+  if (requireFinishQuiz) {
+    if (isFinishedQuiz) {
+      next()
+      return
+    }
+
+    next({ name: 'HomeRoute' })
+    return
+  }
+
+  next()
+}
+
+const routerInstance = new Router({
+  routes
 })
+
+export default (store) => {
+  routerInstance.beforeEach((to, _, next) => beforeEachConfig(store, to, next))
+
+  return routerInstance
+}
