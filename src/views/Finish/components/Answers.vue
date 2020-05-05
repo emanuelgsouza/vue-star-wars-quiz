@@ -14,7 +14,7 @@
       <p class="text-2xl mb-6">Did you like this quiz?</p>
 
       <button class="button" @click="onClick">
-        Start the Again?!
+        Start the Quiz Again?!
       </button>
     </div>
   </section>
@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     onClick () {
-      alert('AAA')
+      this.$router.push({ name: 'PlanetsQuizRoute' })
     }
   }
 }
