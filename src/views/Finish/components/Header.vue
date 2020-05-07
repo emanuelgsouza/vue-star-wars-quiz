@@ -68,8 +68,7 @@ export default {
 
 <style>
 .finish-page-header {
-  min-height: 80vh;
-  @apply bg-white text-center flex flex-col justify-center items-center;
+  @apply py-32 bg-white text-center flex flex-col justify-center items-center;
 }
 
 .finish-page-header h1 {

@@ -14,7 +14,7 @@
     </p>
 
     <div class="step-card-content">
-      <p> Planet: {{ step.homeworld || '' }} </p>
+      <p class="mb-2"> Homeworld: {{ step.homeworld || '' }} </p>
 
       <p> Selected: {{ step.selected || '' }} </p>
     </div>
@@ -41,7 +41,7 @@ export default {
       return this.hasSuccess ? 'is-success' : 'is-danger'
     },
     hasSuccessLabel () {
-      return this.hasSuccess ? 'Acertei' : 'Errei'
+      return this.hasSuccess ? 'Hit!' : 'Wrong!'
     }
   }
 }

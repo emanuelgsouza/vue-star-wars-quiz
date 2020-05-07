@@ -1,5 +1,5 @@
 <template>
-  <section class="p-6">
+  <section class="p-6 answers">
     <h2 class="text-white text-center text-4xl text-warning"> Answers </h2>
 
     <div class="finish-page-steps-list">
@@ -38,14 +38,21 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .finish-page-steps-list {
-  @apply grid grid-cols-4 gap-4 p-6;
+  max-width: 1200px;
+  @apply grid grid-cols-4 gap-4 mx-auto my-6;
 }
 
 @media screen and (max-width: 769px) {
   .finish-page-steps-list {
     @apply grid grid-cols-1;
+  }
+}
+
+@media screen and (max-width: 577px) {
+  .button {
+    @apply block w-full;
   }
 }
 </style>
