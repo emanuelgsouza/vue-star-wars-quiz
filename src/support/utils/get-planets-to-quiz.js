@@ -15,7 +15,7 @@ const getPlanetsQuiz = (planetsAvailable, currentWorld) => {
     const random = getRandomNumber(planets.length)
     const planetSelected = planets[random] || ''
     data.push(planetSelected)
-    planets = planetsAvailable.filter(planet => planet !== planetSelected)
+    planets = planets.filter(planet => planet !== planetSelected)
   }
 
   return shuffle([
