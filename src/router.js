@@ -44,7 +44,8 @@ const beforeEachConfig = (store, to, next) => {
 }
 
 const routerInstance = new Router({
-  routes
+  routes,
+  scrollBehavior: () => ({ x: 0, y: 0 })
 })
 
 export default (store) => {
