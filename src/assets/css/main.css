@@ -20,6 +20,14 @@
     transition: all ease 0.4s 0s;
 }
 
+.button.is-primary {
+    @apply bg-secondary text-primary border-primary;
+}
+
+.button.is-small {
+    @apply text-sm py-2 px-4;
+}
+
 .button:not(:disabled):hover {
     @apply
         bg-secondary
@@ -29,4 +37,8 @@
 
 .button:disabled {
     @apply opacity-50 cursor-not-allowed;
+}
+
+.button.is-primary:hover {
+    @apply bg-primary text-secondary;
 }
