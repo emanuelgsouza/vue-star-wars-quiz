@@ -27,3 +27,7 @@ export const hasSuccessSize = ({ steps }) => {
     return acc
   }, 0)
 }
+
+export const isFinishedQuiz = ({ steps = [], maxStep = 10 }) => {
+  return steps.length === maxStep
+}

@@ -95,7 +95,8 @@ export default {
       if (this.isLastQuestion) {
         return this.stopQuiz()
           .then(() => {
-            this.$refs.modal.open()
+            // this.$refs.modal.open()
+            this.$router.push({ name: 'FinishRoute' })
           })
       }
 

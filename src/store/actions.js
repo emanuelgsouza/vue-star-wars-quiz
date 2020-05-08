@@ -41,7 +41,7 @@ export const resetQuiz = ({ commit }) => {
   commit(TYPES.SET_RUNNING, true)
 }
 
-export const moveToNextQuestion = ({ dispatch, state, commit }) => {
+export const pushQuestionStep = ({ state, commit }) => {
   const { currentQuestion, timer, steps } = state
   const { homeworld, selected } = currentQuestion
   const isMatch = homeworld === selected
@@ -55,7 +55,12 @@ export const moveToNextQuestion = ({ dispatch, state, commit }) => {
   commit(TYPES.SET_CURRENT_QUESTION, data)
   commit(TYPES.SET_STEPS, [...steps, data])
 
-  dispatch('createQuestion')
+  return Promise.resolve(true)
+}
+
+export const moveToNextQuestion = ({ dispatch }) => {
+  return dispatch('pushQuestionStep')
+    .then(() => dispatch('createQuestion'))
 }
 
 export const createQuestion = ({ state, getters, commit }) => {
@@ -76,8 +81,11 @@ export const initializeQuiz = ({ dispatch, commit }) => {
     .then(() => dispatch('createQuestion'))
 }
 
-export const stopQuiz = ({ commit }) => {
-  commit(TYPES.SET_RUNNING, false)
+export const stopQuiz = ({ dispatch, commit }) => {
+  return dispatch('pushQuestionStep')
+    .then(() => {
+      commit(TYPES.SET_RUNNING, false)
 
-  return Promise.resolve(true)
+      return Promise.resolve(true)
+    })
 }
