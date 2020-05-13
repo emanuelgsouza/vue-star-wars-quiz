@@ -1,13 +1,6 @@
 import { mount } from '@vue/test-utils'
 import Steps from '../../src/components/Steps'
 
-describe('Test Steps component', () => {
-  test('is a Vue instance', () => {
-    const wrapper = mount(Steps)
-    expect(wrapper.isVueInstance()).toBeTruthy()
-  })
-})
-
 describe('Test Steps component with nothing argument', () => {
   test('should be 0/0 string', () => {
     const wrapper = mount(Steps)

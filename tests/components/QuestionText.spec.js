@@ -1,13 +1,6 @@
 import { mount } from '@vue/test-utils'
 import QuestionText from '../../src/components/QuestionText'
 
-describe('QuestionText component', () => {
-  test('is a Vue instance', () => {
-    const wrapper = mount(QuestionText)
-    expect(wrapper.isVueInstance()).toBeTruthy()
-  })
-})
-
 describe('Test QuestionText component with nothing argument', () => {
   const wrapper = mount(QuestionText)
 

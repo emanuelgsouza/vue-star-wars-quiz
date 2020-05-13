@@ -7,13 +7,6 @@ const getWrapper = hits => mount(Result, {
   }
 })
 
-describe('Test Result component', () => {
-  test('should be a Vue instance', () => {
-    const wrapper = mount(Result)
-    expect(wrapper.isVueInstance()).toBe(true)
-  })
-})
-
 describe('Test Result with nothing argument', () => {
   const wrapper = mount(Result)
 

@@ -1,12 +1,6 @@
 import { mount } from '@vue/test-utils'
 import QuestionItem from '@/components/QuestionOptions/item'
 
-describe('Test QuestionItem component', () => {
-  test('should be a Vue instance', () => {
-    expect(mount(QuestionItem).isVueInstance()).toBe(true)
-  })
-})
-
 describe('Test QuestionItem with specific option', () => {
   const option = {
     label: 'Tatooine',
