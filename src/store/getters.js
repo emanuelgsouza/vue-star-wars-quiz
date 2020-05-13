@@ -1,4 +1,4 @@
-import { map } from 'lodash-es'
+import { map, filter } from 'lodash-es'
 
 export const loadingData = ({ loadingPlanets, loadingPersons }) => {
   return loadingPlanets || loadingPersons
@@ -13,8 +13,11 @@ export const usedCharacters = ({ steps }) => {
 }
 
 export const usersAvailable = ({ personsData }, { usedCharacters }) => {
-  const names = map(personsData.people || [], 'name')
-  return names.filter(name => !usedCharacters.includes(name))
+  return filter(personsData.people, person => {
+    const { name } = person
+
+    return !usedCharacters.includes(name)
+  })
 }
 
 export const planetsAvailable = ({ planetsData }) => {

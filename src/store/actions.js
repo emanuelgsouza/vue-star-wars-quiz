@@ -1,4 +1,3 @@
-import { get } from 'lodash-es'
 import * as TYPES from './mutation-types'
 import initialState from './state'
 import { loadPeopleQuery, loadPlanetsQuery } from '../support/services'
@@ -64,10 +63,9 @@ export const moveToNextQuestion = ({ dispatch }) => {
 }
 
 export const createQuestion = ({ state, getters, commit }) => {
-  const { planetsAvailable } = getters
+  const { planetsAvailable, usersAvailable } = getters
   const { steps } = state
-  const personsData = get(state, 'personsData.people', [])
-  const data = factoryQuestion(steps.length, personsData, planetsAvailable)
+  const data = factoryQuestion(steps.length, usersAvailable, planetsAvailable)
 
   commit(TYPES.SET_TIMER, 0)
   commit(TYPES.SET_CURRENT_QUESTION, data)
