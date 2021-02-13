@@ -13,7 +13,7 @@
     <Steps
       class="text-5xl text-black"
       :steps="maxStep"
-      :actualStep="hasSuccessSize"
+      :actual-step="hasSuccessSize"
     />
 
     <Result :hits="hasSuccessSize" />

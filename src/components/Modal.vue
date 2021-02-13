@@ -4,10 +4,13 @@
     :class="{ 'is-active': active }"
   >
     <div class="modal__content">
-      <button class="modal__close" @click="close">
-        <i class="fas fa-times"></i>
+      <button
+        class="modal__close"
+        @click="close"
+      >
+        <i class="fas fa-times" />
       </button>
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

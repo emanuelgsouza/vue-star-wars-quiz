@@ -14,7 +14,9 @@
     </p>
 
     <div class="step-card-content">
-      <p class="mb-2"> Homeworld: {{ step.homeworld || '' }} </p>
+      <p class="mb-2">
+        Homeworld: {{ step.homeworld || '' }}
+      </p>
 
       <p> Selected: {{ step.selected || '' }} </p>
     </div>

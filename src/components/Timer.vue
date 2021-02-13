@@ -1,7 +1,7 @@
 <template>
   <div class="timer">
     <span class="icon">
-      <i class="far fa-clock"></i>
+      <i class="far fa-clock" />
     </span>
     <span class="text">
       {{ timer | formatTimer }}

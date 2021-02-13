@@ -12,11 +12,17 @@
       :id="value"
       :value="value"
       @input="onInput"
-    />
+    >
 
     <span class="icon">
-      <i v-if="isSelected" class="fas fa-check-circle"></i>
-      <i v-else class="far fa-circle"></i>
+      <i
+        v-if="isSelected"
+        class="fas fa-check-circle"
+      />
+      <i
+        v-else
+        class="far fa-circle"
+      />
     </span>
 
     <span class="text"> {{ label }} </span>

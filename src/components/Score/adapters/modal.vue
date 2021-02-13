@@ -1,5 +1,8 @@
 <template>
-  <Modal ref="modal" v-on="$listeners">
+  <Modal
+    ref="modal"
+    v-on="$listeners"
+  >
     <Score @start="onStart" />
   </Modal>
 </template>

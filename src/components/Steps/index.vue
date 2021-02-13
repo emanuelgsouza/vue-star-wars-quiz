@@ -1,6 +1,8 @@
 <template>
   <div class="steps">
-    <p class="text-center"><span class="left">{{ actualStep }}</span>/<span class="right">{{ steps }}</span></p>
+    <p class="text-center">
+      <span class="left">{{ actualStep }}</span>/<span class="right">{{ steps }}</span>
+    </p>
   </div>
 </template>
 
