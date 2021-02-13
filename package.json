@@ -5,8 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint",
     "generate": "node scripts/generate-data.js"
   },
   "dependencies": {
@@ -19,11 +19,11 @@
     "vuex": "^3.4.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.3.1",
-    "@vue/cli-plugin-eslint": "^4.3.1",
-    "@vue/cli-plugin-pwa": "^4.3.1",
-    "@vue/cli-plugin-unit-jest": "^4.3.1",
-    "@vue/cli-service": "^4.3.1",
+    "@vue/cli-plugin-babel": "~4.5.11",
+    "@vue/cli-plugin-eslint": "~4.5.11",
+    "@vue/cli-plugin-pwa": "~4.5.11",
+    "@vue/cli-plugin-unit-jest": "~4.5.11",
+    "@vue/cli-service": "~4.5.11",
     "@vue/eslint-config-standard": "^5.1.2",
     "@vue/test-utils": "1.0.2",
     "apollo-fetch": "^0.7.0",
