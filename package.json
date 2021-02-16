@@ -46,5 +46,8 @@
     "sass-loader": "^11.0.1",
     "tailwindcss": "^1.9.6",
     "vue-template-compiler": "^2.6.12"
+  },
+  "resolutions": {
+    "vue-jest": "^4.0.0-rc.1"
   }
 }
