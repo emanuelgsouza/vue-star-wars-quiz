@@ -1,6 +1,6 @@
 <template>
   <div class="question-options">
-    <Item
+    <QuestionOptionsItem
       v-for="option in options"
       :key="option.value"
       v-bind="{ option, selected: value }"
@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import Item from './item'
+import QuestionOptionsItem from './QuestionOptionsItem'
 
 export default {
   name: 'QuestionOptions',
-  components: { Item },
+  components: { QuestionOptionsItem },
   props: {
     options: {
       type: Array,

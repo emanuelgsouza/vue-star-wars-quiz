@@ -1,14 +1,14 @@
 import { mount } from '@vue/test-utils'
-import QuestionItem from '../item.vue'
+import QuestionOptionsItem from '../QuestionOptionsItem.vue'
 
-describe('QuestionItem component', () => {
+describe('QuestionOptionsItem component', () => {
   const option = {
     label: 'Tatooine',
     value: 'Tatooine'
   }
 
   it('should be Tatooine as label and value and selected', () => {
-    const wrapper = mount(QuestionItem, {
+    const wrapper = mount(QuestionOptionsItem, {
       propsData: {
         option,
         selected: 'Tatooine'
@@ -22,7 +22,7 @@ describe('QuestionItem component', () => {
   })
 
   it('should be Tatooine as label and value but not selected', () => {
-    const wrapper = mount(QuestionItem, {
+    const wrapper = mount(QuestionOptionsItem, {
       propsData: {
         option,
         selected: 'Rio de Janeiro'
@@ -36,7 +36,7 @@ describe('QuestionItem component', () => {
   })
 
   it('should emit the input event when click on the label', async () => {
-    const wrapper = mount(QuestionItem, {
+    const wrapper = mount(QuestionOptionsItem, {
       propsData: {
         option,
         selected: 'Rio de Janeiro'
@@ -50,7 +50,7 @@ describe('QuestionItem component', () => {
   })
 
   it('should render the correct label as text', async () => {
-    const wrapper = mount(QuestionItem, {
+    const wrapper = mount(QuestionOptionsItem, {
       propsData: {
         option,
         selected: 'Rio de Janeiro'
@@ -64,13 +64,13 @@ describe('QuestionItem component', () => {
 
   describe('render without arguments', () => {
     it('should render an empty text', () => {
-      const wrapper = mount(QuestionItem)
+      const wrapper = mount(QuestionOptionsItem)
 
       expect(wrapper.text()).toBe('')
     })
 
     it('should not emit the selected event', async () => {
-      const wrapper = mount(QuestionItem)
+      const wrapper = mount(QuestionOptionsItem)
 
       await wrapper.trigger('click')
 
