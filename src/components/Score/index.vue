@@ -18,6 +18,7 @@
 
     <button
       class="button"
+      data-testid="start-button"
       @click="onClick"
     >
       Start the Again?!
