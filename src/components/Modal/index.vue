@@ -6,6 +6,7 @@
     <div class="modal__content">
       <button
         class="modal__close"
+        data-testid="close-modal"
         @click="close"
       >
         <i class="fas fa-times" />
