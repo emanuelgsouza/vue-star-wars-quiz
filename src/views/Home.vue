@@ -4,7 +4,9 @@
       <div class="max-w-sm mx-auto">
         <Logo />
       </div>
-      <h1 class="text-3xl md:text-6xl text-secondary"> Planets Quiz </h1>
+      <h1 class="text-3xl md:text-6xl text-secondary">
+        Planets Quiz
+      </h1>
 
       <p class="max-w-lg mx-auto text-lg py-6">
         Do you know what the planet each character in the Start Wars universe belongs?
