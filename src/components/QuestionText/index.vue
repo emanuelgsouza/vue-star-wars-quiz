@@ -1,7 +1,7 @@
 <template>
-  <p class="text-center text-2xl">
+  <h2 class="text-center text-2xl">
     What planet was <span class="text-secondary underline">{{ person }}</span> born on?
-  </p>
+  </h2>
 </template>
 
 <script>
