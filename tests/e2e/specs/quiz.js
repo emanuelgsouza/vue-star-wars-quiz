@@ -42,4 +42,23 @@ describe('Quiz Logic', () => {
 
     cy.url().should('include', 'quiz')
   })
+
+  it('should execute the quiz correctly', () => {
+    for (let i = 0; i < 10; i++) {
+      const randomNumber = Math.floor(Math.random() * 5)
+
+      cy.contains(`${i}/10`)
+      cy.get('label').eq(randomNumber).click()
+
+      cy.get('@checkButton').click()
+    }
+
+    cy.url().should('include', 'finish')
+
+    cy.contains('Did you like this quiz?')
+
+    cy.contains('Answers')
+
+    cy.findByRole('button', { name: /start the quiz again/ig })
+  })
 })
