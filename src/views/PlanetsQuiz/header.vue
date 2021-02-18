@@ -3,6 +3,7 @@
     <div class="header__body">
       <router-link
         class="header__logo"
+        aria-label="Back to initial page"
         to="/"
       >
         <span class="icon">
