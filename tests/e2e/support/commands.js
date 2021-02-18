@@ -23,3 +23,6 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+// setup Testing Library with Cypress
+import '@testing-library/cypress/add-commands'
