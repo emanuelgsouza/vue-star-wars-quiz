@@ -51,6 +51,7 @@
     "vue-template-compiler": "^2.6.12"
   },
   "resolutions": {
-    "vue-jest": "^4.0.0-rc.1"
+    "vue-jest": "^4.0.0-rc.1",
+    "cypress": "^6.0.0"
   }
 }
