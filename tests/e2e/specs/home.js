@@ -3,6 +3,9 @@
 describe('Home Page', () => {
   it('should render the initial elements, like heading and the button', () => {
     cy.visit('/')
-    cy.contains('Planets Quiz')
+
+    cy.findByRole('heading', { name: /planets quiz/i }).should('exist')
+
+    cy.findByRole('link', { name: /start the quiz!/i }).should('exist')
   })
 })
