@@ -1,5 +1,16 @@
 // https://docs.cypress.io/api/introduction/api.html
 
+const data = require('../../../src/data/data.json')
+const personsData = data.peopleData.people
+
+const getHomeworldFromData = (person) => {
+  const element = personsData.find(personData => {
+    return personData.name === person
+  })
+
+  return element.homeworld.name
+}
+
 describe('Quiz Logic', () => {
   beforeEach(() => {
     cy.visit('/')
@@ -44,11 +55,31 @@ describe('Quiz Logic', () => {
   })
 
   it('should execute the quiz correctly', () => {
+    cy.wrap([]).as('executions')
+
     for (let i = 0; i < 10; i++) {
       const randomNumber = Math.floor(Math.random() * 5)
 
       cy.contains(`${i}/10`)
-      cy.get('label').eq(randomNumber).click()
+
+      cy.findByTestId('person').invoke('text').as('person')
+
+      cy.get('label').eq(randomNumber).as('selected')
+
+      cy.get('@selected').invoke('text').then((value) => {
+        cy.get('@executions').then((executions) => {
+          cy.get('@person').then((person) => {
+            executions.push({
+              person,
+              selected: value.trim(),
+              step: i,
+              homeworld: getHomeworldFromData(person)
+            })
+          })
+        })
+      })
+
+      cy.get('@selected').click()
 
       cy.get('@checkButton').click()
     }
@@ -60,5 +91,20 @@ describe('Quiz Logic', () => {
     cy.contains('Answers')
 
     cy.findByRole('button', { name: /start the quiz again/ig })
+
+    cy.get('@executions').then((executions) => {
+      for (const execution of executions) {
+        const result = execution.selected === execution.homeworld ? 'Hit!' : 'Wrong!'
+
+        cy
+          .get(`[data-testid="step-card"][data-step="${execution.step}"]`)
+          .as('stepCard')
+
+        cy.get('@stepCard').contains(execution.person).should('exist')
+        cy.get('@stepCard').contains(execution.selected).should('exist')
+        cy.get('@stepCard').contains(execution.homeworld).should('exist')
+        cy.get('@stepCard').contains(result).should('exist')
+      }
+    })
   })
 })
