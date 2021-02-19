@@ -4,7 +4,9 @@
       <i class="fas fa-spinner fa-spin" />
     </span>
 
-    <p class="mt-4"> {{ message }} </p>
+    <p class="mt-4">
+      {{ message }}
+    </p>
   </div>
 </template>
 

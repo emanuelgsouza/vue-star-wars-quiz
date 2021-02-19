@@ -1,10 +1,15 @@
 <template>
-  <div class="alert" :class="alertClass">
+  <div
+    class="alert"
+    :class="alertClass"
+  >
     <span class="block mx-auto text-4xl">
       <i :class="iconName" />
     </span>
 
-    <p class="mt-4"> {{ message }} </p>
+    <p class="mt-4">
+      {{ message }}
+    </p>
   </div>
 </template>
 

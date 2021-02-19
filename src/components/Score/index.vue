@@ -1,20 +1,26 @@
 <template>
   <div class="score">
     <span class="score__figure">
-      <i class="fas fa-jedi"></i>
+      <i class="fas fa-jedi" />
     </span>
 
-    <p class="score__text"> Your score is </p>
+    <p class="score__text">
+      Your score is
+    </p>
 
     <Steps
       class="text-2xl"
       :steps="maxStep"
-      :actualStep="hasSuccessSize"
+      :actual-step="hasSuccessSize"
     />
 
     <Result :hits="hasSuccessSize" />
 
-    <button class="button" @click="onClick">
+    <button
+      class="button"
+      data-testid="start-button"
+      @click="onClick"
+    >
       Start the Again?!
     </button>
   </div>

@@ -1,9 +1,13 @@
 <template>
   <header class="header">
     <div class="header__body">
-      <router-link class="header__logo" to="/">
+      <router-link
+        class="header__logo"
+        aria-label="Back to initial page"
+        to="/"
+      >
         <span class="icon">
-          <i class="fas fa-jedi"></i>
+          <i class="fas fa-jedi" />
         </span>
         <span class="text">Planets Quiz</span>
       </router-link>

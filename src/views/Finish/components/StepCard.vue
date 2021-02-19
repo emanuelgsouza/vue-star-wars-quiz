@@ -1,5 +1,10 @@
 <template>
-  <div class="step-card">
+  <div
+    class="step-card"
+    data-testid="step-card"
+    :data-person="person"
+    :data-step="quizStep"
+  >
     <p class="step-card-header">
       <span>
         {{ person }}
@@ -14,7 +19,9 @@
     </p>
 
     <div class="step-card-content">
-      <p class="mb-2"> Homeworld: {{ step.homeworld || '' }} </p>
+      <p class="mb-2">
+        Homeworld: {{ step.homeworld || '' }}
+      </p>
 
       <p> Selected: {{ step.selected || '' }} </p>
     </div>
@@ -42,6 +49,9 @@ export default {
     },
     hasSuccessLabel () {
       return this.hasSuccess ? 'Hit!' : 'Wrong!'
+    },
+    quizStep () {
+      return this.step.step || 0
     }
   }
 }

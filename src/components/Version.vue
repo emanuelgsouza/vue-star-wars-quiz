@@ -11,11 +11,17 @@ export default {
   <div class="version">
     <p>
       Made With
-        <span> <i class="fab fa-vuejs"></i> </span>
-        by <a href="https://emanuelgsouza.dev" target="blanc" title="Visit the Emanuel Gonçalves website"> @emanuelgsouza </a>
+      <span> <i class="fab fa-vuejs" /> </span>
+      by <a
+        href="https://emanuelgsouza.dev"
+        target="blanc"
+        title="Visit the Emanuel Gonçalves website"
+      > @emanuelgsouza </a>
     </p>
     <p>
-      <a href="https://github.com/emanuelgsouza/vue-star-wars-quiz"><i class="fab fa-github"></i> {{ $options.version }}</a>
+      <a href="https://github.com/emanuelgsouza/vue-star-wars-quiz">
+        <i class="fab fa-github" /> {{ $options.version }}
+      </a>
     </p>
   </div>
 </template>

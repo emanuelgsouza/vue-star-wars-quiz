@@ -1,6 +1,8 @@
 <template>
   <section class="p-6 answers">
-    <h2 class="text-white text-center text-4xl text-warning"> Answers </h2>
+    <h2 class="text-white text-center text-4xl text-warning">
+      Answers
+    </h2>
 
     <div class="finish-page-steps-list">
       <StepCard
@@ -11,9 +13,14 @@
     </div>
 
     <div class="text-center mt-6">
-      <p class="text-2xl mb-6">Did you like this quiz?</p>
+      <p class="text-2xl mb-6">
+        Did you like this quiz?
+      </p>
 
-      <button class="button" @click="onClick">
+      <button
+        class="button"
+        @click="onClick"
+      >
         Start the Quiz Again?!
       </button>
     </div>
