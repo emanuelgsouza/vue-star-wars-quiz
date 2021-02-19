@@ -1,6 +1,9 @@
 <template>
   <h2 class="text-center text-2xl">
-    What planet was <span class="text-secondary underline">{{ person }}</span> born on?
+    What planet was <span
+      class="text-secondary underline"
+      data-testid="person"
+    >{{ person }}</span> born on?
   </h2>
 </template>
 
