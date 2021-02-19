@@ -64,7 +64,9 @@ describe('Quiz Logic', () => {
 
       cy.findByTestId('person').invoke('text').as('person')
 
-      cy.get('label').eq(randomNumber).as('selected')
+      cy.get('label').eq(randomNumber).as('selected').click({
+        force: true
+      })
 
       cy.get('@selected').invoke('text').then((value) => {
         cy.get('@executions').then((executions) => {
@@ -79,9 +81,9 @@ describe('Quiz Logic', () => {
         })
       })
 
-      cy.get('@selected').click()
-
-      cy.get('@checkButton').click()
+      cy.get('@checkButton').click({
+        timeout: 10000
+      })
     }
 
     cy.url().should('include', 'finish')
