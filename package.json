@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
     "generate": "node scripts/generate-data.js"
   },
@@ -19,7 +20,9 @@
     "vuex": "^3.6.2"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^7.0.3",
     "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-e2e-cypress": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-pwa": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
@@ -48,6 +51,7 @@
     "vue-template-compiler": "^2.6.12"
   },
   "resolutions": {
-    "vue-jest": "^4.0.0-rc.1"
+    "vue-jest": "^4.0.0-rc.1",
+    "cypress": "^6.0.0"
   }
 }
