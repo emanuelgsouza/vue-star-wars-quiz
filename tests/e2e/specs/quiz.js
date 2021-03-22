@@ -58,6 +58,8 @@ describe('Quiz Logic', () => {
     cy.wrap([]).as('executions')
 
     for (let i = 0; i < 10; i++) {
+      cy.wait(500)
+
       const randomNumber = Math.floor(Math.random() * 5)
 
       cy.contains(`${i}/10`)
