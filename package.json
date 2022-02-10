@@ -45,7 +45,7 @@
     "esm": "^3.2.25",
     "fs-extra": "^9.1.0",
     "lodash": "^4.17.21",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^11.0.1",
     "tailwindcss": "^1.9.6",
     "vue-template-compiler": "^2.6.12"
