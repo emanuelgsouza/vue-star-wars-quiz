@@ -47,7 +47,7 @@ export const router = createRouter({
 })
 
 // think how can we move this to Vue 3 structure
-export default (store) => {
+export const buildRouter = (store) => {
   router.beforeEach((to, _, next) => beforeEachConfig(store, to, next))
 
   return router
