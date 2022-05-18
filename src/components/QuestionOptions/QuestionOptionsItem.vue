@@ -53,6 +53,7 @@ export default {
       return this.value === this.selected
     }
   },
+  emits: ['selected'],
   methods: {
     onInput () {
       this.$emit('selected', this.option)

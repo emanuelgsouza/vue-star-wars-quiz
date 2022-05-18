@@ -25,6 +25,7 @@ export default {
       default: ''
     }
   },
+  emits: ['input'],
   methods: {
     onSelected ({ value }) {
       this.$emit('input', value)
