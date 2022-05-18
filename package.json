@@ -53,8 +53,5 @@
     "sass-loader": "^13.0.0",
     "tailwindcss": "^1.9.6",
     "vue-jest": "^5.0.0-alpha.10"
-  },
-  "resolutions": {
-    "cypress": "^9.0.0"
   }
 }
