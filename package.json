@@ -20,7 +20,7 @@
     "vuex": "^3.6.2"
   },
   "devDependencies": {
-    "@testing-library/cypress": "^7.0.4",
+    "@testing-library/cypress": "^8.0.2",
     "@vue/cli-plugin-babel": "~4.5.12",
     "@vue/cli-plugin-e2e-cypress": "~4.5.12",
     "@vue/cli-plugin-eslint": "~4.5.12",
@@ -43,10 +43,10 @@
     "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-vue": "^7.8.0",
     "esm": "^3.2.25",
-    "fs-extra": "^9.1.0",
+    "fs-extra": "^10.1.0",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
-    "sass-loader": "^11.0.1",
+    "sass-loader": "^13.0.0",
     "tailwindcss": "^1.9.6",
     "vue-template-compiler": "^2.6.12"
   },
