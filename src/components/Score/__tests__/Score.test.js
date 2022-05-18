@@ -1,12 +1,9 @@
-import Vuex from 'vuex'
-import { mount, createLocalVue } from '@vue/test-utils'
+import { createStore } from 'vuex'
+import { mount } from '@vue/test-utils'
 
 import Score from '..'
 import Steps from '../../Steps'
 import Result from '../Result.vue'
-
-const localVue = createLocalVue()
-localVue.use(Vuex)
 
 const factoryComponent = (localStore = {}) => {
   const defaultStore = {
@@ -18,14 +15,15 @@ const factoryComponent = (localStore = {}) => {
     }
   }
 
-  const store = new Vuex.Store({
+  const store = createStore({
     ...defaultStore,
     ...localStore
   })
 
   return mount(Score, {
-    localVue,
-    store
+    global: {
+      plugins: [store]
+    }
   })
 }
 

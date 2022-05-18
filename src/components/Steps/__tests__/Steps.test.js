@@ -10,7 +10,7 @@ describe('Steps component', () => {
 
   it('should render the corresponding text when passing the 1 as step and 10 as actualStep', () => {
     const wrapper = mount(Steps, {
-      propsData: {
+      props: {
         steps: 10,
         actualStep: 1
       }

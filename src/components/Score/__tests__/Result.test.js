@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import Result from '../Result.vue'
 
 const getWrapper = hits => mount(Result, {
-  propsData: {
+  props: {
     hits
   }
 })

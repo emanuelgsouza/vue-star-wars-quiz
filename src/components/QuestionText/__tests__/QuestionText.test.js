@@ -10,7 +10,7 @@ describe('QuestionText component', () => {
 
   it('should render "What planet was Luke Skywalker born on?" when pass the Luke Skywalker as person', () => {
     const wrapper = mount(QuestionText, {
-      propsData: {
+      props: {
         person: 'Luke Skywalker'
       }
     })

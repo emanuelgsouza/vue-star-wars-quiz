@@ -20,7 +20,7 @@ describe('Steps component', () => {
   describe('with arguments', () => {
     it('should be 1/10 string when passing the 1 as step and 10 as actualStep', () => {
       const wrapper = mount(Steps, {
-        propsData: {
+        props: {
           steps: 10,
           actualStep: 1
         }
@@ -31,7 +31,7 @@ describe('Steps component', () => {
 
     it('should be populate the step and actual step properties', () => {
       const wrapper = mount(Steps, {
-        propsData: {
+        props: {
           steps: 8,
           actualStep: 4
         }

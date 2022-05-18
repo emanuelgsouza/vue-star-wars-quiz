@@ -9,7 +9,7 @@ describe('Test QuestionItem with specific option', () => {
 
   test('should be Tatooine as label and value and selected', () => {
     const wrapper = mount(QuestionItem, {
-      propsData: {
+      props: {
         option,
         selected: 'Tatooine'
       }
@@ -23,7 +23,7 @@ describe('Test QuestionItem with specific option', () => {
 
   test('should be Tatooine as label and value but not selected', () => {
     const wrapper = mount(QuestionItem, {
-      propsData: {
+      props: {
         option,
         selected: 'Rio de Janeiro'
       }
