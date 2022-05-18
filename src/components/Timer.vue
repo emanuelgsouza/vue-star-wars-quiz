@@ -50,7 +50,7 @@ export default {
       Visibility.stop(this.$interval)
     }
   },
-  beforeDestroy () {
+  beforeUnmount () {
     this.stopTimer()
   }
 }
