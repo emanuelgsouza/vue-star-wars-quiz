@@ -1,7 +1,7 @@
 <template>
   <Modal
     ref="modal"
-    v-on="$listeners"
+    v-bind="$attrs"
   >
     <Score @start="onStart" />
   </Modal>

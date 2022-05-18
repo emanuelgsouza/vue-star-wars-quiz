@@ -16,7 +16,7 @@ describe('Test QuestionText component with nothing argument', () => {
 describe('Test QuestionText component with Luke Skywalker person argument', () => {
   test('the person prop should be Luke Skywalker', () => {
     const wrapper = mount(QuestionText, {
-      propsData: {
+      props: {
         person: 'Luke Skywalker'
       }
     })
@@ -25,7 +25,7 @@ describe('Test QuestionText component with Luke Skywalker person argument', () =
 
   test('should be "What planet was Luke Skywalker born on?"', () => {
     const wrapper = mount(QuestionText, {
-      propsData: {
+      props: {
         person: 'Luke Skywalker'
       }
     })

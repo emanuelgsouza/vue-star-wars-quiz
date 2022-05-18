@@ -53,6 +53,7 @@ export default {
       return this.value === this.selected
     }
   },
+  emits: ['selected'],
   methods: {
     onInput () {
       this.$emit('selected', this.option)
@@ -63,22 +64,7 @@ export default {
 
 <style scoped>
 .question-options__item {
-  @apply
-    flex
-    px-6
-    py-3
-    mt-3
-    rounded-sm
-    /* bg-white */
-    /* text-primary */
-    text-lg
-    items-center
-    cursor-pointer
-    border
-    border-white
-    text-white
-    border-2
-  ;
+  @apply flex px-6 py-3 mt-3 rounded-sm /* bg-white */ /* text-primary */ text-lg items-center cursor-pointer border border-white text-white border-2;
 }
 
 .question-options__item:first-of-type {

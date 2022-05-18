@@ -13,7 +13,7 @@ const OPTIONS = [
 describe('QuestionOptions component', () => {
   it('should render the corresponding items', () => {
     const wrapper = mount(QuestionOptions, {
-      propsData: {
+      props: {
         options: OPTIONS,
         value: ''
       }
@@ -24,7 +24,7 @@ describe('QuestionOptions component', () => {
 
   it('should emit the input value when click on the second item', async () => {
     const wrapper = mount(QuestionOptions, {
-      propsData: {
+      props: {
         options: OPTIONS,
         value: ''
       }
@@ -32,14 +32,14 @@ describe('QuestionOptions component', () => {
 
     const secondElement = wrapper.findAllComponents(QuestionOptionsItem).at(1)
 
-    await secondElement.trigger('click')
+    await secondElement.find('input').trigger('input')
 
     expect(wrapper.emitted('input')[0]).toEqual(['Malastare'])
   })
 
   it('should pass to item component the selected value', async () => {
     const wrapper = mount(QuestionOptions, {
-      propsData: {
+      props: {
         options: OPTIONS,
         value: 'Endor'
       }

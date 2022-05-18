@@ -1,8 +1,5 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from './views/Home.vue'
-
-Vue.use(Router)
 
 const routes = [
   {
@@ -43,13 +40,15 @@ const beforeEachConfig = (store, to, next) => {
   next()
 }
 
-const routerInstance = new Router({
+export const router = createRouter({
+  history: createWebHashHistory(),
   routes,
   scrollBehavior: () => ({ x: 0, y: 0 })
 })
 
+// think how can we move this to Vue 3 structure
 export default (store) => {
-  routerInstance.beforeEach((to, _, next) => beforeEachConfig(store, to, next))
+  router.beforeEach((to, _, next) => beforeEachConfig(store, to, next))
 
-  return routerInstance
+  return router
 }

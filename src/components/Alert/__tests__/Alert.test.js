@@ -6,7 +6,7 @@ describe('Alert component', () => {
   it('should render the passed message', () => {
     const message = 'Test message'
     const wrapper = mount(Alert, {
-      propsData: {
+      props: {
         message
       }
     })
@@ -17,7 +17,7 @@ describe('Alert component', () => {
   it('should include the warning classes by default', () => {
     const message = 'Test message'
     const wrapper = mount(Alert, {
-      propsData: {
+      props: {
         message
       }
     })
@@ -29,7 +29,7 @@ describe('Alert component', () => {
   it('should include different classes with different type', () => {
     const message = 'Test message'
     const wrapper = mount(Alert, {
-      propsData: {
+      props: {
         message,
         type: 'negative'
       }
