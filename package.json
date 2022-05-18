@@ -11,7 +11,6 @@
     "generate": "node scripts/generate-data.js"
   },
   "dependencies": {
-    "@vue/compat": "^3.1.0",
     "core-js": "^3.9.1",
     "lodash-es": "^4.17.21",
     "register-service-worker": "^1.7.2",
