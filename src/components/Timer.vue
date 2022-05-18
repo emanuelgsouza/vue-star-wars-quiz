@@ -4,7 +4,7 @@
       <i class="far fa-clock" />
     </span>
     <span class="text">
-      {{ timer | formatTimer }}
+      {{ computedTimer }}
     </span>
   </div>
 </template>
@@ -16,14 +16,14 @@ import { formatTimer } from '@/support/utils'
 
 export default {
   name: 'Timer',
-  filters: {
-    formatTimer
-  },
   data: () => ({
     $interval: null
   }),
   computed: {
-    ...mapState(['timer', 'isRunning'])
+    ...mapState(['timer', 'isRunning']),
+    computedTimer () {
+      return formatTimer(this.timer)
+    }
   },
   watch: {
     isRunning: {

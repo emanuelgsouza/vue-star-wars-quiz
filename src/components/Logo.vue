@@ -1,10 +1,9 @@
 <script>
 export default {
-  functional: true
 }
 </script>
 
-<template functional>
+<template>
   <figure>
     <img
       src="/star-wars-logo.jpg"
